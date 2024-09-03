@@ -1,36 +1,32 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# AI-BB
 
-## Getting Started
 
-First, run the development server:
+- Docs seem okay for testing and maybe general scraping, but not sure how useful for AI stuff
+- Session management in general is pretty painful
+- Not sure logs should show 100 logs for a single loadUrl that lasted 4 seconds
+- Session overview bottom panel with 'console' button just doesnt work at all? Not even sure what it does
+- Would also be helpful to show more details on the session itself, basically would like to see all things that are returned from getSession
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Sessions vs browsers
+  - Docs say to use browser.close() to ensure we end the session after loadURL, but its not ideal to end the session every time we load a page
+  - But it's not clear if we can close the browser, but continue using the session
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- The 429 error is unclear and is only explained in 1 part of the docs, on the very bottom of some page. Should probably be more clear in the error 
+- Using the default loadUrl doesnt work for chats because the session is immediately ended after the first page load, and then following attempts to loadUrl result in 429
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- What is ideal? 
+  - Maintain a single browserbase session and single browser instance within a user session?
+  - Maintain a single browserbase session but close and create new browser per loadUrl? 
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
+- BrowserbaseAISDK doesnt work, I think it would be better to just show people how to do what the SDK aims to achieve, instead of abstracting it away and making it hard to understand
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## Personal notes
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- It is my general belief that this applies to most cases, but 10x more important for AI applications.  Also why I don't use stuff like langchain.  People should be writing these functions themselves and DEFINITELY should not use anything that abstracts away prompts. How can you possibly control an AI application if you don't even know the prompts being used?
+- Give a man a fish...
+- Less abstraction, better guides and docs >>>>>> abstracting everything away and shitty docs
+- I think this is what they call DevEx
