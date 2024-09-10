@@ -1,7 +1,9 @@
 # AI-BB
 
+- Spent way too much time trying to debug errors with no message or explanation and not covered in docs
+- Was cool when it would work
 
-- Docs seem okay for testing and maybe general scraping, but not sure how useful for AI stuff
+- Docs seem okay for testing and maybe general scraping, but doesnt at all cover using browserbase for other applications like AI stuff
 - Session management in general is pretty painful
 - Not sure logs should show 100 logs for a single loadUrl that lasted 4 seconds
 - Session overview bottom panel with 'console' button just doesnt work at all? Not even sure what it does
@@ -28,7 +30,6 @@
 
 ## Personal notes
 
-- It is my general belief that this applies to most cases, but 10x more important for AI applications.  Also why I don't use stuff like langchain.  People should be writing these functions themselves and DEFINITELY should not use anything that abstracts away prompts. How can you possibly control an AI application if you don't even know the prompts being used?
+- People should be writing these functions themselves and DEFINITELY should not use anything that abstracts away prompts. How can you possibly control an AI application if you don't even know the prompts being used?
 - Give a man a fish...
-- Less abstraction, better guides and docs >>>>>> abstracting everything away and shitty docs
-- I think this is what they call DevEx
+- Less abstraction, better guides and docs >>>>>> abstracting everything away and unhelpful docs
