@@ -22,6 +22,8 @@
 - BrowserbaseAISDK doesnt work, I think it would be better to just show people how to do what the SDK aims to achieve, instead of abstracting it away and making it hard to understand
 
 
+- When I tried to implement function for reconnecting to running session to use for loadUrl again, end up with 'Promise was collected' errors.  And when I check the session in the dashboard, it shows it is still running, but the video clip of the session is only for the first 2 seconds. Not sure what that means. 
+
 
 
 ## Personal notes
